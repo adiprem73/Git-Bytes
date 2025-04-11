@@ -11,13 +11,13 @@ import Footer from '../components/Footer';
 const App = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#121212] to-[#1A1A1A] text-white font-sans">
-      <Navbar />,
-      <Hero/>,
-       <ScanSetup/>,
-       <HowItWorks/>,
-       <OwaspInfo/>,
-       <Testimonials/>,
-       <CTA/>,
+      <Navbar />
+      <Hero/>
+       <ScanSetup/>
+       <HowItWorks/>
+       <OwaspInfo/>
+       <Testimonials/>
+       <CTA/>
        <Footer/>
       
     </div>

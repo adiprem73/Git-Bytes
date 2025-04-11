@@ -2,7 +2,7 @@ import React from 'react';
 
 const SecurityScore = () => {
   return (
-    <div className="bg-gray-900 rounded-lg p-6 mb-8 border border-gray-800">
+    <div className="bg-[#1E1E1E] rounded-lg p-6 mb-8 border border-gray-800">
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-xl font-bold mb-2">Final Security Score</h3>
