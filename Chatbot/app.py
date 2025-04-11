@@ -30,17 +30,27 @@ promptCat = ChatPromptTemplate.from_template(
     "\nOutput strictly just the category name without any extra text,or explanation."
 )
 
-
 promptHeaders = ChatPromptTemplate.from_template(
     "You are analyzing a website's metadata and missing headers.\n"
     "Category: {category}\n"
     "Missing Headers: {missing_headers}\n"
     "Is Developer: {is_developer}\n\n"
-    "If the user is a developer, provide a detailed explanation of the issues caused by the missing headers, "
-    "the security or performance risks involved, and how to implement fixes. \n"
-    "If the user is not a developer, provide a simple explanation of why these headers are important "
-    "without using too many technical terms.\n\n"
-    "Response:"
+    
+    "Response MUST contain:\n"
+    "1. Severity score X out of 10 based on how safe is the site(high for safest)"
+    "2. only three very short findings\n"
+    
+    "Format EXACTLY like this:\n"
+    "[X]/10\n"
+    "[[finding description]]\n"
+    "[[finding description]]\n"
+    "[[finding description]]\n\n"
+    
+    "Example output format:\n"
+    "8\n"
+    "Prepared statements used in most queries\n"
+    "Input validation on search form\n"
+    "Potential SQL injection in admin panel\n\n"
 )
 
 # http://localhost:8000/category/invoke
