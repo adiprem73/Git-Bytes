@@ -99,10 +99,20 @@ import ChartSummary from "../components/ChartSummary";
 import Footer from "../components/Footer";
 
 const Report = () => {
- 
+  const [missingHeaders, setMissingHeaders] = useState([]);
+    const [url, setUrl] = useState("https://amazon.in");
     useEffect(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
+      fetch("/api/header-scanner", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          },
+          body: JSON.stringify({url})
+      }). then((res)=>res.json()).then((data)=>{setMissingHeaders(data.feedback || []);}).catch((err)=>{
+        console.log(err);
+      });
+    }, [url]);
   
 
   const vulnerabilities = [
@@ -120,11 +130,7 @@ const Report = () => {
       title: " Missing Headers",
       score: 8,
       icon: "database",
-      items: [
-        { text: "Prepared statements used in most queries", status: "safe", issue: "No issues", location: "/search" },
-        { text: "Input validation on search form", status: "safe", issue: "No issues", location: "/login" },
-        { text: "Potential SQL injection in admin panel", status: "warning", issue: "Potential SQL injection", location: "/admin/users" }
-      ]
+      items: missingHeaders,
     },
     {
       title: "CSRF (Cross-Site Request Forgery)",
