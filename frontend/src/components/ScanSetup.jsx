@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router';
 
 const ScanSetup = () => {
   const [url, setUrl] = useState('');
@@ -43,7 +44,7 @@ const ScanSetup = () => {
             id="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="https://example.com"
+            placeholder="https://rishitraj.tech"
             className="w-full bg-[#121212] border border-gray-700 rounded-lg py-3 pl-12 pr-4 text-white focus:outline-none focus:border-[#00FF9C] transition-colors"
           />
         </div>
@@ -159,10 +160,10 @@ const ScanSetup = () => {
 
       {/* Run Scan Button */}
       <div className="text-center">
-        <button className="bg-[#00FF9C] text-[#121212] font-bold px-8 py-4 text-lg rounded-button hover:bg-opacity-90 transition-colors cursor-pointer whitespace-nowrap">
+        <Link to="/Report" className="bg-[#00FF9C] text-[#121212] font-bold px-8 py-4 text-lg rounded-button hover:bg-opacity-90 transition-colors cursor-pointer whitespace-nowrap">
           <i className="fas fa-bolt mr-2"></i>
           Run Security Scan
-        </button>
+        </Link>
         <p className="mt-4 text-gray-400 text-sm">
           Estimated scan time: 45-60 seconds
         </p>
