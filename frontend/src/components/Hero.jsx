@@ -7,12 +7,11 @@ const Hero = () => {
   const [blink, setBlink] = useState(true);
 
   const words = ['security flaws', 'vulnerabilities', 'risks', 'bugs'];
-  const typingSpeed = 120;        // ms per character
-  const deletingSpeed = 60;       // ms per character
-  const pauseBetweenWords = 1000; // pause before deleting
-  const pauseAfterDelete = 500;   // pause before starting next word
+  const typingSpeed = 120;
+  const deletingSpeed = 60;
+  const pauseBetweenWords = 1000;
+  const pauseAfterDelete = 500;
 
-  // Blinking cursor effect
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setBlink(prev => !prev);
@@ -20,7 +19,6 @@ const Hero = () => {
     return () => clearInterval(cursorInterval);
   }, []);
 
-  // Typing effect
   useEffect(() => {
     const currentWord = words[currentWordIndex];
     let timeout;
@@ -60,10 +58,13 @@ const Hero = () => {
           Get a detailed report in seconds. Identify vulnerabilities before hackers do.
         </p>
 
-        {/* Glowing Button with Hover Swipe Effect */}
-        <button className="relative overflow-hidden bg-[#33FFB2] text-[#121212] font-bold px-8 py-4 text-lg rounded-button transition-all duration-300 ease-out cursor-pointer whitespace-nowrap shadow-md hover:brightness-110 group">
+        {/* Glowing button with smooth border animation */}
+        <button className="relative group text-[#121212] font-bold px-8 py-4 text-lg rounded-button bg-[#33FFB2] overflow-hidden transition-all duration-300 ease-out shadow-md">
           <span className="relative z-10">Start Scan</span>
-          <span className="absolute top-0 left-[-100%] w-full h-full bg-[#00FF9C] opacity-20 transition-all duration-500 ease-out group-hover:left-0"></span>
+          {/* Border sweep */}
+          <span className="absolute inset-0 border-2 border-transparent rounded-button group-hover:border-[#00FF9C] transition-all duration-500 ease-in-out animate-glow"></span>
+          {/* Glowing border effect */}
+          <span className="absolute inset-0 rounded-button pointer-events-none group-hover:shadow-[0_0_15px_3px_#00FF9C] transition-shadow duration-500 ease-in-out"></span>
         </button>
 
         <div className="mt-8 flex items-center text-gray-400">
