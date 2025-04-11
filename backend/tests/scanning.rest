@@ -1,8 +1,8 @@
-POST http://localhost:5000/site-category
+POST http://localhost:5000/header-scanner
 Content-Type: application/json
 
 {
-  "url": "https://www.hackthissite.org/"
+  "url": "https://medium.com"
 }
 
 ###
