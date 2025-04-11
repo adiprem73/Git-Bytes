@@ -117,7 +117,7 @@ const Report = () => {
       ]
     },
     {
-      title: "SQL Injection",
+      title: " Missing Headers",
       score: 8,
       icon: "database",
       items: [

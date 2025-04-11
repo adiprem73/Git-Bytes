@@ -19,7 +19,6 @@ const App = () => {
        <Testimonials/>
        <CTA/>
        <Footer/>
-      
     </div>
   );
 };
