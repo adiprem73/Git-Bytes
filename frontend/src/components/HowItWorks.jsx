@@ -18,9 +18,10 @@ const HowItWorks = () => {
         
         <div className="bg-[#1E1E1E] p-6 rounded-lg">
           <div className="w-12 h-12 bg-[#2A2A2A] rounded-full flex items-center justify-center mb-4">
-            <i className="fas fa-radar text-[#00FF9C] text-xl"></i>
+            <i className="fas fa-check text-[#00FF9D] "></i>
           </div>
           <h3 className="text-xl font-bold mb-3">2. Automated Scanning</h3>
+           
           <p className="text-gray-300">
             Our system performs non-invasive tests to identify security issues based on OWASP guidelines.
           </p>

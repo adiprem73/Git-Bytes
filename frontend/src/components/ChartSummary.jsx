@@ -77,7 +77,7 @@ const ChartSummary = () => {
         <h3 className="text-lg font-semibold mb-4">Vulnerability Overview</h3>
         <div id="vulnerabilityChart" className="w-full h-64"></div>
       </div>
-      <div className="md:col-span-2 bg-gray-900 rounded-lg p-6 border border-gray-800">
+      <div className="md:col-span-2 bg-[#1E1E1E] rounded-lg p-6 border border-gray-800">
         <h3 className="text-lg font-semibold mb-4">Summary and Recommendations</h3>
         <p className="text-gray-300 mb-4">
           Your website is moderately secure. Fix red and yellow warnings for full safety.
