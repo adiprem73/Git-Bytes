@@ -1,13 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 
+LLM_SERVER = "http://localhost:8000/category/invoke"
+
 def category(url):
     try:
         response = requests.get(url)
-        response.raise_for_status()
-
         soup = BeautifulSoup(response.text, "html.parser")
-
+ 
         title = soup.title.string.strip() if soup.title else None
         meta_tags = {}
         for meta in soup.find_all("meta"):
@@ -18,16 +18,24 @@ def category(url):
             key = name or props
             if key and content:
                 meta_tags[key] = content
-    except Exception as e:
-        title = None
-        meta_tags = {}
 
-    description = meta_tags.get("description",None) if meta_tags else None
-    keywords = meta_tags.get("keywords",None) if meta_tags else None
-    return {
-        "title": title,
-        "description": description,
-        "keywords": keywords,
-        "url": url,
-        "other_metadata": meta_tags if title is None and description is None else None,
-    }
+        description = meta_tags.get("description",None) if meta_tags else None
+        keywords = meta_tags.get("keywords",None) if meta_tags else None
+
+        response = requests.post(LLM_SERVER,json=
+                {
+                    "input": {
+                    "title": title if title else "Not found",
+                    "description": description if description else "Not found",
+                    "keywords": keywords if keywords else "Not found",
+                            }
+                }
+            )
+
+        return {
+                "category":response.json()["output"]
+                }
+
+    except Exception as e:
+        print("Error communicating with LLM:", e)
+        return {"category":"Other"}

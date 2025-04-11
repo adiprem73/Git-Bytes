@@ -1,7 +1,8 @@
 from flask import Flask
 from flask import request, jsonify
 from scanners import check_headers
-from utils import category
+import validators
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -11,15 +12,11 @@ def index():
 @app.route("/header-scanner", methods=["POST"])
 def header_scanner():
     url = request.json["url"]
-    result = check_headers(url)
-    print(result)
-    return jsonify(result)
 
-@app.route("/site-category", methods=["POST"])
-def site_category():
-    url = request.json["url"]
-    result = category(url)
-    print(result)
+    if not url or not validators.url(url):
+        return jsonify({"error": "Invalid URL"}), 400
+
+    result = check_headers(url)
     return jsonify(result)
 
 @app.route("/sql-injection-scanner", methods=["POST"])
