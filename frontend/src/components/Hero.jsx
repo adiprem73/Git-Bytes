@@ -6,7 +6,7 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [blink, setBlink] = useState(true);
 
-  const words = ['security flaws', 'vulnerabilities', 'risks', 'bugs'];
+  const words = ['security flaws', 'vulnerabilities', 'risks', 'bugs','threats','loopholes','backdoors'];
   const typingSpeed = 120;
   const deletingSpeed = 60;
   const pauseBetweenWords = 1000;
