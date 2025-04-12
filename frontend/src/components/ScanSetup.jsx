@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router';
+import { useNavigate } from 'react-router';
 
 const ScanSetup = () => {
   const [url, setUrl] = useState('');
+  const navigate = useNavigate();
   const [vulnerabilityTypes, setVulnerabilityTypes] = useState({
     xss: true,
     sqlInjection: true,
@@ -29,6 +30,18 @@ const ScanSetup = () => {
       [setting]: value
     }));
   };
+
+const handleScan = (e) =>{
+    e.preventDefault();
+    navigate('/Report', {
+      state: {
+        url,
+        vulnerabilityTypes,
+        mode,
+        advancedSettings
+      }
+    }); 
+}
 
   return (
     <section className="container mx-auto px-6 py-16 bg-[#1E1E1E] rounded-lg shadow-xl">
@@ -160,10 +173,10 @@ const ScanSetup = () => {
 
       {/* Run Scan Button */}
       <div className="text-center">
-        <Link to="/Loader" className="bg-[#00FF9C] text-[#121212] font-bold px-8 py-4 text-lg rounded-button hover:bg-opacity-90 transition-colors cursor-pointer whitespace-nowrap">
+        <button onClick={handleScan} className="bg-[#00FF9C] text-[#121212] font-bold px-8 py-4 text-lg rounded-button hover:bg-opacity-90 transition-colors cursor-pointer whitespace-nowrap">
           <i className="fas fa-bolt mr-2"></i>
           Run Security Scan
-        </Link>
+        </button>
         <p className="mt-4 text-gray-400 text-sm">
           Estimated scan time: 45-60 seconds
         </p>
