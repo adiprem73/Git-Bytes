@@ -5,6 +5,7 @@ from routes.SSL import add_ssl_route
 from routes.chatbot import add_chatbot_route
 import uvicorn
 
+
 # Add all routes
 add_category_route(app)
 add_headers_route(app)
