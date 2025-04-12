@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request, jsonify
-from scanners import check_headers
+from scanners import check_headers, check_ssl
 import validators
 from utils import category
 
@@ -18,6 +18,16 @@ def header_scanner():
         return jsonify({"error": "Invalid URL"}), 400
 
     result = check_headers(url)
+    return result
+
+@app.route("/ssl-scanner", methods=["POST"])
+def ssl_scanner():
+    url = request.json["url"]
+
+    if not url or not validators.url(url):
+        return jsonify({"error": "Invalid URL"}), 400
+
+    result = check_ssl(url)
     return result
 
 @app.route("/category", methods=["POST"])
