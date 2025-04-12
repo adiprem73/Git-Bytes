@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SecurityScore = () => {
+const SecurityScore = ({score}) => {
   return (
     <div className="bg-[#1E1E1E] rounded-lg p-6 mb-8 border border-gray-800">
       <div className="flex items-center justify-between">
@@ -9,7 +9,7 @@ const SecurityScore = () => {
           <div className="flex items-center">
             <div className="relative w-32 h-32">
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-4xl font-bold">7.5</span>
+                <span className="text-4xl font-bold">{score ?? 7.5}</span>
               </div>
               <svg viewBox="0 0 36 36" className="w-full h-full">
                 <path

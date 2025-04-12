@@ -91,10 +91,10 @@ const ChartSummary = () => {
           </ul>
         </div>
         <div className="flex flex-wrap gap-3 mt-6">
-          <button className="bg-[#00FF9D] text-black px-4 py-2 rounded-md hover:bg-opacity-90 transition flex items-center">
+          {/* <button className="bg-[#00FF9D] text-black px-4 py-2 rounded-md hover:bg-opacity-90 transition flex items-center">
             <i className="fas fa-download mr-2"></i>
             Download PDF Report
-          </button>
+          </button> */}
           <button className="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-md flex items-center">
             <i className="fas fa-share-alt mr-2"></i>
             Share Report Link
