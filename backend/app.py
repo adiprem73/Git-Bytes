@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request, jsonify
 from scanners import check_headers
 import validators
+from utils import category
 
 app = Flask(__name__)
 
@@ -17,7 +18,17 @@ def header_scanner():
         return jsonify({"error": "Invalid URL"}), 400
 
     result = check_headers(url)
-    return jsonify(result)
+    return result
+
+@app.route("/category", methods=["POST"])
+def category_scanner():
+    url = request.json["url"]
+
+    if not url or not validators.url(url):
+        return jsonify({"error": "Invalid URL"}), 400
+
+    result = category(url)
+    return result
 
 @app.route("/sql-injection-scanner", methods=["POST"])
 def sql_injection():
