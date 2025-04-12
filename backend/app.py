@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request, jsonify
-from scanners import check_headers, check_ssl
+from scanners import check_headers, check_ssl, check_csrf
 import validators
 from utils import category
 
@@ -28,6 +28,16 @@ def ssl_scanner():
         return jsonify({"error": "Invalid URL"}), 400
 
     result = check_ssl(url)
+    return result
+
+@app.route("/csrf-scanner", methods=["POST"])
+def csrf_scanner():
+    url = request.json["url"]
+
+    if not url or not validators.url(url):
+        return jsonify({"error": "Invalid URL"}), 400
+
+    result = check_csrf(url)
     return result
 
 @app.route("/category", methods=["POST"])
