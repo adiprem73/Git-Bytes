@@ -33,7 +33,7 @@ const ScanSetup = () => {
 
 const handleScan = (e) =>{
     e.preventDefault();
-    navigate('/Report', {
+    navigate('/Loader', {
       state: {
         url,
         vulnerabilityTypes,
@@ -44,7 +44,7 @@ const handleScan = (e) =>{
 }
 
   return (
-    <section className="container mx-auto px-6 py-16 bg-[#1E1E1E] rounded-lg shadow-xl">
+    <section id='scan-setup' className="container mx-auto px-6 py-16 bg-[#1E1E1E] rounded-lg shadow-xl">
       <h2 className="text-3xl font-bold mb-8 text-center">Set Up Your Security Scan</h2>
 
       {/* URL Input */}
@@ -93,7 +93,7 @@ const handleScan = (e) =>{
       </div>
 
       {/* Mode Selector */}
-      <div className="mb-8">
+      {/* <div className="mb-8">
         <h3 className="text-xl font-medium mb-4">Scan Mode</h3>
         <div className="flex space-x-4">
           <button
@@ -115,7 +115,7 @@ const handleScan = (e) =>{
             Advanced
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Advanced Settings */}
       <div className="mb-8">
@@ -173,7 +173,7 @@ const handleScan = (e) =>{
 
       {/* Run Scan Button */}
       <div className="text-center">
-        <button onClick={handleScan} className="bg-[#00FF9C] text-[#121212] font-bold px-8 py-4 text-lg rounded-button hover:bg-opacity-90 transition-colors cursor-pointer whitespace-nowrap">
+        <button onClick={handleScan } className="bg-[#00FF9C] text-[#121212] font-bold px-8 py-4 text-lg rounded-button hover:bg-opacity-90 transition-colors cursor-pointer whitespace-nowrap">
           <i className="fas fa-bolt mr-2"></i>
           Run Security Scan
         </button>

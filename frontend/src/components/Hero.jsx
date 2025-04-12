@@ -59,8 +59,8 @@ const Hero = () => {
         </p>
 
         {/* Glowing button with smooth border animation */}
-        <button className="relative group text-[#121212] font-bold px-8 py-4 text-lg rounded-button bg-[#33FFB2] overflow-hidden transition-all duration-300 ease-out shadow-md">
-          <span className="relative z-10">Start Scan</span>
+        <button  className="relative group text-[#121212] font-bold px-8 py-4 text-lg rounded-button bg-[#33FFB2] overflow-hidden transition-all duration-300 ease-out shadow-md">
+          <a href='#scan-setup' className="relative z-10">Start Scan</a>
           {/* Border sweep */}
           <span className="absolute inset-0 border-2 border-transparent rounded-button group-hover:border-[#00FF9C] transition-all duration-500 ease-in-out animate-glow"></span>
           {/* Glowing border effect */}

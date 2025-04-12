@@ -7,6 +7,7 @@ import OwaspInfo from '../components/OwaspInfo';
 import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
+import Chatbot from '../components/Chatbot';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
        <Testimonials/>
        <CTA/>
        <Footer/>
+       <Chatbot/>
     </div>
   );
 };

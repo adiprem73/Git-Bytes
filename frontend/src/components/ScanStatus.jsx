@@ -18,10 +18,10 @@ const ScanStatus = () => {
         </div>
       </div>
       <div className="flex space-x-3">
-        <button className="bg-[#1E1E1E] hover:bg-gray-700 text-white px-4 py-2 rounded-md flex items-center">
+        {/* <button className="bg-[#1E1E1E] hover:bg-gray-700 text-white px-4 py-2 rounded-md flex items-center">
           <i className="fas fa-download mr-2"></i>
           Download Full Report
-        </button>
+        </button> */}
         <button className="bg-[#1E1E1E] hover:bg-gray-700 text-white px-4 py-2 rounded-md flex items-center">
           <i className="fas fa-search mr-2"></i>
           Scan Another Site
