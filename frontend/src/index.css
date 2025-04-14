@@ -6,6 +6,11 @@
 /* Loader.css */
 
 /* Loader.css */
+html {
+  scroll-behavior: smooth;
+}
+
+
 
 *{
   scroll-behavior: "smooth";
