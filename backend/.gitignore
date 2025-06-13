@@ -1,0 +1,66 @@
+# Byte-compiled Python files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyCharm-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Flask-specific files
+instance/
+*.db
+*.sqlite3
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Testing and coverage
+.coverage
+htmlcov/
+.tox/
+.nox/
+pytest_cache/
+
+# Virtual environment files
+pip-wheel-metadata/
+*.whl
+
+# Environment variables
+.env
+.flaskenv
+
+# Cache files
+.cache/
+.temp/
+
+# Temporary files
+*.tmp
+
+# Jupyter Notebook files
+.ipynb_checkpoints/
+
+# Other common files to ignore
+*.bak
+*.swp

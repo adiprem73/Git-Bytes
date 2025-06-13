@@ -1,0 +1,12 @@
+POST http://localhost:5000/header-scanner
+Content-Type: application/json
+
+{
+  "url": "https://medium.com"
+}
+
+###
+GET http://localhost:5000
+Accept: application/json
+
+###
